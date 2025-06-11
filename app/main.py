@@ -9,6 +9,7 @@ from app.products import models as product_models
 # Importing all the routes
 from app.auth.routes import router as auth_router
 from app.products.routes import router as product_router
+from app.products.public_routes import router as public_product_router
 
 app = FastAPI()
 
@@ -20,6 +21,7 @@ Base.metadata.create_all(bind=engine)  # Create database tables
 # Include the authentication routes
 app.include_router(auth_router)
 app.include_router(product_router)
+app.include_router(public_product_router)
 
 
 

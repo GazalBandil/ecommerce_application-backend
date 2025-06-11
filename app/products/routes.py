@@ -1,12 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, logger
 from sqlalchemy.orm import Session
-from app.auth import schemas
 from app.auth.dependencies import require_role
 from app.auth.models import Roles
 from app.core.deps import get_db
 from app.products.models import Product
 from app.products.schemas import *
-
 
 
 router = APIRouter(prefix='/admin/products', tags=["Admin Products"])
@@ -100,3 +98,5 @@ async def delete_product(
     db.delete(product)
     db.commit()
     return {"message": f"Product '{product.name}' deleted successfully"}
+
+
