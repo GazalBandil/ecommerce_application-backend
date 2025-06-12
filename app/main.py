@@ -4,6 +4,7 @@ from app.core.database import engine ,Base  # Assuming get_db is defined in your
 from app.auth import models as auth_models
 from app.products import models as product_models 
 from app.cart import models as cart_models
+from app.orders import models as order_models
 
 
 
@@ -12,11 +13,13 @@ from app.auth.routes import router as auth_router
 from app.products.routes import router as product_router
 from app.products.public_routes import router as public_product_router
 from app.cart.routes import router as cart_router
+from app.orders.checkout_routes import router as checkout_router
+from app.orders.orders_routes import router as order_router
 
 app = FastAPI()
 
 # For creating the database tables
-_ = [auth_models , product_models,cart_models]  
+_ = [auth_models , product_models,cart_models , order_models] 
 
 Base.metadata.create_all(bind=engine) # Create database tables
 
@@ -26,6 +29,8 @@ app.include_router(auth_router)
 app.include_router(product_router)
 app.include_router(public_product_router)
 app.include_router(cart_router)
+app.include_router(checkout_router)
+app.include_router(order_router)
 
 
 
