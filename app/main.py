@@ -1,4 +1,6 @@
 
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from app.core.database import engine ,Base  # Assuming get_db is defined in your database module
 from app.auth import models as auth_models
@@ -16,7 +18,15 @@ from app.cart.routes import router as cart_router
 from app.orders.checkout_routes import router as checkout_router
 from app.orders.orders_routes import router as order_router
 
+load_dotenv()  
+smtp_host = os.getenv("SMTP_HOST")
+smtp_port = int(os.getenv("SMTP_PORT"))
+smtp_user = os.getenv("SMTP_USER")
+smtp_pass = os.getenv("SMTP_PASS")
+
 app = FastAPI()
+
+
 
 # For creating the database tables
 _ = [auth_models , product_models,cart_models , order_models] 

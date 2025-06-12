@@ -1,3 +1,4 @@
+import secrets
 from passlib.context import CryptContext
 from datetime import datetime, timezone, timedelta
 from jose import JWTError, jwt
@@ -10,8 +11,8 @@ SECRET_KEY = os.getenv("JWT_SECRET_KEY", "B7F4698891BCE837E13525741839D")
 ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("JWT_EXPIRE_MINUTES", 30))
 REFRESH_TOKEN_EXPIRE_DAYS = int(os.getenv("JWT_REFRESH_EXPIRE_DAYS", 7))
-
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+RESET_TOKEN_EXPIRE_MINUTES = int(os.getenv("RESET_TOKEN_EXPIRE_MINUTES",15)) 
 
 # --- Password Utilities ---
 def hash_password(password: str) -> str:
@@ -70,3 +71,26 @@ def create_tokens(email: str, password_hash: str, role: Roles) -> Dict[str, str]
         "refresh_token": create_refresh_token(email, password_hash, role),
         "token_type": "bearer"
     }
+
+# --- Password Reset Tokens ---
+def create_reset_token(email: str) -> str:
+    expire = datetime.now(timezone.utc) + timedelta(minutes=RESET_TOKEN_EXPIRE_MINUTES)
+    payload = {
+        "sub": email,
+        "type": "reset",
+        "exp": expire
+    }
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+# --- Reset Token Verification ---
+def verify_reset_token(token: str) -> str | None:
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        if payload.get("type") != "reset":
+            return None
+        return payload.get("sub")
+    except JWTError:
+        return None
+
+def generate_reset_token() -> str:
+    return secrets.token_urlsafe(32)
