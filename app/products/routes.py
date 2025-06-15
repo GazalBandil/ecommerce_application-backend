@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, Query, logger
+from fastapi import APIRouter, Depends, HTTPException, Query , status
+from app.core.logging import logger
 from sqlalchemy.orm import Session
 from app.auth.dependencies import require_role
 from app.auth.models import Roles
@@ -9,17 +10,21 @@ from app.products.schemas import *
 
 router = APIRouter(prefix='/admin/products', tags=["Admin Products"])
 
-# Post request for products
+
+#POST CREATE PRODUCT - accessible to admin only
 @router.post("" , response_model = ProductOut , status_code = 201)
 async def create_products( 
     product:ProductCreate,
     db: Session = Depends(get_db),
     user: dict = Depends(require_role(Roles.admin))
-    ):
-    exist_product = db.query(Product).filter(Product.name == product.name).first()
-    if exist_product:
+):
+ # Check if the product already exists
+ exist_product = db.query(Product).filter(Product.name == product.name).first()
+ if exist_product:
+        logger.warning(f"Product creation failed: '{product.name}' already exists.")
         raise HTTPException(status_code=400, detail="Product already exists")
-    
+
+ try: 
     new_product = Product(
         name = product.name,
         description = product.description,
@@ -32,9 +37,16 @@ async def create_products(
     db.add(new_product)
     db.commit()
     db.refresh(new_product)
+    logger.info(f"Product created: ID {product.id} by admin ID: {user.id}")
     return new_product
+ 
+ except Exception as e:
+        logger.exception("Error occurred while creating product.")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
-#  Get all products include pagination
+
+
+#GET ALL PRODUCTS- USE OF PAGINATION - accessible to admin only
 @router.get("", response_model=list[ProductOut],status_code=200)
 async def get_all_products(
     db: Session = Depends(get_db),
@@ -42,11 +54,28 @@ async def get_all_products(
     skip: int = Query(0, ge=0),
     limit: int = Query(10, le=100),
 ):
-    products = db.query(Product).offset(skip).limit(limit).all()
-    return [ProductOut.model_validate(p, from_attributes=True) for p in products]
+    try:
+        products = db.query(Product).offset(skip).limit(limit).all()
+        logger.info(
+            f"Admin {user['email']} accessed product list: skip={skip}, limit={limit}, total={len(products)}"
+        )
+
+        return [ProductOut.model_validate(p, from_attributes=True) for p in products]
+
+    except Exception as e:
+        logger.error(f"Failed to fetch products: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail={
+                "error": True,
+                "message": "Something went wrong while fetching products",
+                "code": 500,
+            },
+        )
+    
 
 
-# get products by id aapi 
+# GET PRODUCTS BY ID - accessible to admin only
 @router.get("/{id}", response_model=ProductOut)
 async def get_product_by_id(
     id: int,
@@ -56,10 +85,17 @@ async def get_product_by_id(
 
     product_exists = db.query(Product).filter(Product.id == id).first()
     if not product_exists:
+        logger.warning(f"Product not found for ID: {id}")
         raise HTTPException(status_code=404, detail="Product not found")
-    
-    return ProductOut.model_validate(product_exists, from_attributes=True)
 
+    try:
+        logger.info(f"Product fetched successfully: ID={id} by AdminID={user.get('id')}")
+        return ProductOut.model_validate(product_exists, from_attributes=True)
+
+    except Exception as e:
+        logger.exception(f"Exception while serializing product ID={id}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+    
 
 
 # update product 
@@ -72,17 +108,26 @@ async def update_product(
 ):
     product = db.query(Product).filter(Product.id == id).first()
     if not product:
+        logger.warning(f"Update failed: Product with ID {id} not found")
         raise HTTPException(status_code=404, detail="Product not found")
 
-    product.name = product_update.name if product_update.name else product.name
-    product.description = product_update.description if product_update.description else product.description
-    product.price = product_update.price if product_update.price is not None else product.price
-    product.stock = product_update.stock if product_update.stock is not None else product.stock
-    product.category = product_update.category if product_update.category else product.category
-    product.image_url = str(product_update.image_url) if product_update.image_url else product.image_url
-    db.commit()
-    db.refresh(product)
-    return product
+    try:
+        product.name = product_update.name if product_update.name else product.name
+        product.description = product_update.description if product_update.description else product.description
+        product.price = product_update.price if product_update.price is not None else product.price
+        product.stock = product_update.stock if product_update.stock is not None else product.stock
+        product.category = product_update.category if product_update.category else product.category
+        product.image_url = str(product_update.image_url) if product_update.image_url else product.image_url
+
+        db.commit()
+        db.refresh(product)
+
+        logger.info(f"Product updated: ID={id} by AdminID={user.get('id')}")
+        return product
+
+    except Exception as e:
+        logger.exception(f"Exception while updating product ID={id}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 # delete product
 @router.delete("/{id}")
@@ -91,12 +136,18 @@ async def delete_product(
     db: Session = Depends(get_db),
     user: dict = Depends(require_role(Roles.admin))
 ):
-    product = db.query(Product).filter(Product.id == id).first()
-    if not product:
+   product = db.query(Product).filter(Product.id == id).first()
+   if not product:
+        logger.warning(f"Delete failed: Product with ID {id} not found")
         raise HTTPException(status_code=404, detail="Product not found")
 
-    db.delete(product)
-    db.commit()
-    return {"message": f"Product '{product.name}' deleted successfully"}
-
+   try:
+        db.delete(product)
+        db.commit()
+        logger.info(f"Product deleted: ID={id}, Name='{product.name}', by AdminID={user.get('id')}")
+        return {"message": f"Product '{product.name}' deleted successfully"}
+    
+   except Exception:
+        logger.exception(f"Exception while deleting product ID={id}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
 
