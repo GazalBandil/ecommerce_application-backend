@@ -1842,3 +1842,7 @@ TypeError: create_error_response() got an unexpected keyword argument 'detail'
 2025-06-15 20:47:51,925 | WARNING | Invalid quantity 2 by user ID 6
 2025-06-15 20:49:17,625 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
 2025-06-15 20:49:17,755 | WARNING | Invalid quantity 0 by user ID 6
+2025-06-15 20:50:07,099 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-15 20:50:07,470 | WARNING | Product stock is0 not available, by user ID 6
+2025-06-15 20:51:22,301 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-15 20:51:22,312 | WARNING | Product stock is0 not available, by user ID 6
