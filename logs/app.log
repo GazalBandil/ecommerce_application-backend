@@ -1846,3 +1846,11 @@ TypeError: create_error_response() got an unexpected keyword argument 'detail'
 2025-06-15 20:50:07,470 | WARNING | Product stock is0 not available, by user ID 6
 2025-06-15 20:51:22,301 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
 2025-06-15 20:51:22,312 | WARNING | Product stock is0 not available, by user ID 6
+2025-06-15 21:51:22,978 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-15 21:51:23,306 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-15 21:51:23,794 | INFO | User login successful for email: antrabandil@gmail.com, user_id: 6
