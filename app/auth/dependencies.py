@@ -6,7 +6,6 @@ from app.auth.models import Roles, User
 # from app.auth.utils import decode_token
 from typing import Annotated, List, Union
 from sqlalchemy.orm import Session
-
 from app.core.deps import get_db
 
 

@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
+from app.auth.models import Roles
 from app.core.error_logger import create_error_response
 from app.core.logging import logger
 from app.cart import models, schemas
 from app.products.models import Product
 from app.core.deps import get_db
-from app.auth.dependencies import get_current_user
+from app.auth.dependencies import get_current_user, require_role
 
 router = APIRouter(prefix="/cart", tags=["Cart"])
 
@@ -15,7 +16,7 @@ router = APIRouter(prefix="/cart", tags=["Cart"])
 async def add_to_cart(
     item: schemas.CartAdd,
     db: Session = Depends(get_db),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(require_role(Roles.user))
 ):
     user_id = current_user.get("id")
     if not user_id:
@@ -63,7 +64,7 @@ async def add_to_cart(
 @router.get("", response_model=List[schemas.CartItemOut])
 async def view_cart(
     db: Session = Depends(get_db),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(require_role(Roles.user))
 ):
     user_id = current_user.get("id")
     logger.info(f"Fetching cart for user ID: {user_id}")
@@ -92,7 +93,7 @@ async def view_cart(
 async def remove_from_cart(
     product_id: int,
     db: Session = Depends(get_db),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(require_role(Roles.user))
 ):
     user_id = current_user.get("id")
     logger.info(f"Attempting to remove product ID {product_id} from cart for user ID {user_id}")
@@ -124,7 +125,7 @@ async def update_cart(
     product_id: int,
     item: schemas.CartUpdate,
     db: Session = Depends(get_db),
-    current_user: dict = Depends(get_current_user)
+    current_user: dict = Depends(require_role(Roles.user))
 ):
     user_id = current_user.get("id")
     logger.info(f"Attempting to update product ID {product_id} in cart for user ID {user_id}")

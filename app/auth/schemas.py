@@ -1,16 +1,34 @@
 from enum import Enum
+import re
 from typing import Optional
-from pydantic import BaseModel, EmailStr, Field, field_validator
+from pydantic import BaseModel,Field, field_validator
 
-
+VALID_TLDS = {
+    "com","gov","co","in"
+}
 class Role(str, Enum):
     admin = "admin"
     user = "user"
-    
+
 class UserBase(BaseModel):
     name: str
-    email: EmailStr # Email validation
+    email: str # Email validation
     role: Optional[Role] = Role.user  # Default role is 'user'
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, v: str) -> str:
+        email_regex = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(\w{2,})$"
+        match = re.match(email_regex, v)
+        if not match:
+            raise ValueError("Invalid email format")
+        
+        tld = match.group(1).lower()
+        if tld not in VALID_TLDS:
+            raise ValueError(f"Invalid or unsupported email domain (TLD: .{tld})")
+        
+        return v.lower()
+
 
 class UserCreate(UserBase):
     hashed_password:str = Field(..., min_length=6)
@@ -26,8 +44,23 @@ class UserCreate(UserBase):
         return v
 
 class  UserLogin(BaseModel):
-    email: EmailStr
+    email: str
     hashed_password:str  # Password is required for user login   
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, v: str) -> str:
+        email_regex = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(\w{2,})$"
+        match = re.match(email_regex, v)
+        if not match:
+            raise ValueError("Invalid email format")
+        
+        tld = match.group(1).lower()
+        if tld not in VALID_TLDS:
+            raise ValueError(f"Invalid or unsupported email domain (TLD: .{tld})")
+        
+        return v.lower()
+
 
 class User(UserBase):
     id: int
@@ -37,7 +70,7 @@ class User(UserBase):
         orm_mode = True  # Enable ORM mode to work with SQLAlchemy models
 
 class ForgotPassword(BaseModel):
-    email: EmailStr  # Email is required for password reset
+    email: str  # Email is required for password reset
 
 class ResetPassword(BaseModel):
     token: str
@@ -64,7 +97,7 @@ class TokenData(BaseModel):
 
 
 class ForgotPassword(BaseModel):
-    email: EmailStr
+    email: str
 
 class ResetPassword(BaseModel):
     token: str

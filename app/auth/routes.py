@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Response
 from fastapi.responses import JSONResponse
 from app.auth import models, schemas
 from sqlalchemy.orm import Session
+from app.auth.dependencies import get_current_user
 from app.auth.utils import create_tokens, hash_password, verify_password, create_reset_token,verify_reset_token
 from app.auth.email import send_email
 from app.core.deps import get_db
@@ -62,7 +63,8 @@ async def login_user(request: schemas.UserLogin,db:Session = Depends(get_db)):
 
 # logout endpoint
 @router.get("/logout", status_code=200)
-async def logout_user():
+async def logout_user(db:Session=Depends(get_db),
+                      user:dict=Depends(get_current_user)):
     logger.info("Logout attempt initiated.") 
     try:
         response = JSONResponse(content={"message": "Logged out successfully"})

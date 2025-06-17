@@ -1854,3 +1854,595 @@ Traceback (most recent call last):
               ^^^^^^^^^^^^^^^^^
 AttributeError: module 'bcrypt' has no attribute '__about__'
 2025-06-15 21:51:23,794 | INFO | User login successful for email: antrabandil@gmail.com, user_id: 6
+2025-06-16 13:12:53,674 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:12:53,808 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-16 13:12:55,138 | INFO | User login successful for email: antrabandil@gmail.com, user_id: 6
+2025-06-16 13:33:19,016 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:33:19,812 | INFO | User login successful for email: antrabandil@gmail.com, user_id: 6
+2025-06-16 13:34:17,913 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/docs
+2025-06-16 13:34:18,929 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 13:50:50,680 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/docs
+2025-06-16 13:50:50,995 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 13:52:21,434 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/login
+2025-06-16 13:52:21,436 | ERROR | HTTPException: Not Found
+2025-06-16 13:54:07,030 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/docs
+2025-06-16 13:54:07,306 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 13:54:43,927 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/redoc
+2025-06-16 13:54:44,753 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 13:56:15,904 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/docs
+2025-06-16 13:56:16,167 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 13:59:17,727 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:59:17,803 | WARNING | Invalid login credentials for email: gazalbandil@example.com
+2025-06-16 13:59:17,804 | ERROR | HTTPException: Invalid email or password
+2025-06-16 13:59:20,495 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:59:20,502 | WARNING | Invalid login credentials for email: gazalbandil@example.com
+2025-06-16 13:59:20,504 | ERROR | HTTPException: Invalid email or password
+2025-06-16 13:59:40,254 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:59:40,258 | WARNING | Invalid login credentials for email: admin@example.com
+2025-06-16 13:59:40,259 | ERROR | HTTPException: Invalid email or password
+2025-06-16 13:59:50,121 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 13:59:50,131 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-16 13:59:50,670 | WARNING | Invalid login credentials for email: admin@gmail.com
+2025-06-16 13:59:50,671 | ERROR | HTTPException: Invalid email or password
+2025-06-16 14:00:02,654 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 14:00:03,730 | WARNING | Invalid login credentials for email: admin@gmail.com
+2025-06-16 14:00:03,731 | ERROR | HTTPException: Invalid email or password
+2025-06-16 14:00:55,189 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-16 14:00:55,578 | INFO | User login successful for email: antrabandil@gmail.com, user_id: 6
+2025-06-16 14:02:00,672 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/auth/logout
+2025-06-16 14:02:00,676 | ERROR | HTTPException: Not authenticated
+2025-06-16 14:17:12,845 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/redoc
+2025-06-16 14:17:13,596 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 14:21:04,008 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-16 14:31:12,914 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/openapi.json
+2025-06-17 13:56:24,402 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 13:56:24,532 | ERROR | Validation Error: [{'type': 'string_too_short', 'loc': ('body', 'hashed_password'), 'msg': 'String should have at least 6 characters', 'input': 'root', 'ctx': {'min_length': 6}}]
+2025-06-17 14:01:17,465 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 14:01:17,569 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 14:02:03,629 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:02:04,638 | INFO | User login successful for email: rishitamaheshwari07@gmail.com, user_id: 7
+2025-06-17 14:02:54,294 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/admin/products
+2025-06-17 14:02:54,303 | ERROR | HTTPException: Requires roles: admin
+2025-06-17 14:03:15,083 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/products
+2025-06-17 14:03:15,095 | INFO | Sorting by: price
+2025-06-17 14:03:15,125 | INFO | Retrieved 4 product(s)
+2025-06-17 14:04:26,419 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:04:26,431 | WARNING | Product stock is0 not available, by user ID 6
+2025-06-17 14:05:12,249 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:05:12,291 | INFO | New cart item added: Product ID 1 x3 for user ID 6
+2025-06-17 14:05:26,233 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:05:26,242 | INFO | New cart item added: Product ID 2 x3 for user ID 6
+2025-06-17 14:05:45,511 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/cart
+2025-06-17 14:05:45,519 | INFO | Fetching cart for user ID: 7
+2025-06-17 14:05:45,524 | WARNING | Cart is empty for user ID: 7
+2025-06-17 14:05:45,529 | ERROR | Unhandled Exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    |     await response(scope, wrapped_receive, send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    |     await send({"type": "http.response.body", "body": chunk, "more_body": True})
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    |     await send(message)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    |     output = self.conn.send(event=h11.Data(data=data))
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    |     data_list = self.send_with_data_passthrough(event)
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    |     writer(event, data_list.append)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    |     self.send_data(event.data, write)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    |     raise LocalProtocolError("Too much data for declared Content-Length")
+    | h11._util.LocalProtocolError: Too much data for declared Content-Length
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    await response(scope, wrapped_receive, send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    await send({"type": "http.response.body", "body": chunk, "more_body": True})
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    await send(message)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    output = self.conn.send(event=h11.Data(data=data))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    data_list = self.send_with_data_passthrough(event)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    writer(event, data_list.append)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    self.send_data(event.data, write)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    raise LocalProtocolError("Too much data for declared Content-Length")
+h11._util.LocalProtocolError: Too much data for declared Content-Length
+2025-06-17 14:06:22,945 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/cart
+2025-06-17 14:06:22,968 | INFO | Fetching cart for user ID: 7
+2025-06-17 14:06:22,992 | WARNING | Cart is empty for user ID: 7
+2025-06-17 14:06:23,002 | ERROR | Unhandled Exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    |     await response(scope, wrapped_receive, send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    |     await send({"type": "http.response.body", "body": chunk, "more_body": True})
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    |     await send(message)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    |     output = self.conn.send(event=h11.Data(data=data))
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    |     data_list = self.send_with_data_passthrough(event)
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    |     writer(event, data_list.append)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    |     self.send_data(event.data, write)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    |     raise LocalProtocolError("Too much data for declared Content-Length")
+    | h11._util.LocalProtocolError: Too much data for declared Content-Length
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    await response(scope, wrapped_receive, send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    await send({"type": "http.response.body", "body": chunk, "more_body": True})
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    await send(message)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    output = self.conn.send(event=h11.Data(data=data))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    data_list = self.send_with_data_passthrough(event)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    writer(event, data_list.append)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    self.send_data(event.data, write)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    raise LocalProtocolError("Too much data for declared Content-Length")
+h11._util.LocalProtocolError: Too much data for declared Content-Length
+2025-06-17 14:07:16,904 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:07:16,918 | INFO | New cart item added: Product ID 2 x3 for user ID 7
+2025-06-17 14:07:27,292 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:07:27,310 | INFO | New cart item added: Product ID 1 x3 for user ID 7
+2025-06-17 14:07:40,357 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/cart
+2025-06-17 14:07:40,363 | INFO | Fetching cart for user ID: 7
+2025-06-17 14:07:40,365 | INFO | Cart contains 2 items for user ID: 7
+2025-06-17 14:08:53,719 | INFO | Access Log: IP=127.0.0.1, Method=PUT, Path=/cart/1
+2025-06-17 14:08:53,729 | INFO | Attempting to update product ID 1 in cart for user ID 7
+2025-06-17 14:08:53,758 | INFO | Updated quantity to 50 for product ID 1 in cart of user ID 7
+2025-06-17 14:09:30,665 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/cart
+2025-06-17 14:09:30,675 | INFO | Fetching cart for user ID: 7
+2025-06-17 14:09:30,677 | INFO | Cart contains 2 items for user ID: 7
+2025-06-17 14:10:03,017 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/checkout
+2025-06-17 14:10:03,027 | INFO | Checkout process started by user ID: 7
+2025-06-17 14:10:03,113 | INFO | Order placed successfully: Order ID 6 by user ID 7
+2025-06-17 14:11:02,894 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/orders
+2025-06-17 14:11:02,903 | INFO | Fetching order history for user ID: 7
+2025-06-17 14:11:02,916 | INFO | Found 1 orders for user ID: 7
+2025-06-17 14:11:30,212 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/orders/6
+2025-06-17 14:11:30,219 | INFO | Fetching order details: Order ID 6 for user ID 7
+2025-06-17 14:11:30,229 | INFO | Order details retrieved successfully: Order ID 6 for user ID 7
+2025-06-17 14:11:48,877 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/orders/1
+2025-06-17 14:11:48,885 | INFO | Fetching order details: Order ID 1 for user ID 7
+2025-06-17 14:11:48,888 | WARNING | Order not found: Order ID 1 for user ID 7
+2025-06-17 14:13:59,703 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/cart
+2025-06-17 14:13:59,711 | INFO | Fetching cart for user ID: 7
+2025-06-17 14:13:59,714 | WARNING | Cart is empty for user ID: 7
+2025-06-17 14:13:59,718 | ERROR | Unhandled Exception
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |   File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    |     await response(scope, wrapped_receive, send)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    |     await send({"type": "http.response.body", "body": chunk, "more_body": True})
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    |     await send(message)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    |     output = self.conn.send(event=h11.Data(data=data))
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    |     data_list = self.send_with_data_passthrough(event)
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    |     writer(event, data_list.append)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    |     self.send_data(event.data, write)
+    |   File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    |     raise LocalProtocolError("Too much data for declared Content-Length")
+    | h11._util.LocalProtocolError: Too much data for declared Content-Length
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 176, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\gazal\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    await response(scope, wrapped_receive, send)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\base.py", line 217, in __call__
+    await send({"type": "http.response.body", "body": chunk, "more_body": True})
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\starlette\middleware\errors.py", line 162, in _send
+    await send(message)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 500, in send
+    output = self.conn.send(event=h11.Data(data=data))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 538, in send
+    data_list = self.send_with_data_passthrough(event)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_connection.py", line 571, in send_with_data_passthrough
+    writer(event, data_list.append)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 65, in __call__
+    self.send_data(event.data, write)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\h11\_writers.py", line 91, in send_data
+    raise LocalProtocolError("Too much data for declared Content-Length")
+h11._util.LocalProtocolError: Too much data for declared Content-Length
+2025-06-17 14:14:27,919 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:14:27,936 | ERROR | Validation Error: [{'type': 'greater_than', 'loc': ('body', 'quantity'), 'msg': 'Input should be greater than 0', 'input': -3, 'ctx': {'gt': 0}}]
+2025-06-17 14:16:41,331 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:16:41,352 | ERROR | Validation Error: [{'type': 'greater_than', 'loc': ('body', 'quantity'), 'msg': 'Input should be greater than 0', 'input': 0, 'ctx': {'gt': 0}}]
+2025-06-17 14:17:19,624 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 14:17:19,648 | ERROR | Validation Error: [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: The part after the @-sign is not valid. It should have a period.', 'input': 'rishitamaheshwari07@gmail', 'ctx': {'reason': 'The part after the @-sign is not valid. It should have a period.'}}]
+2025-06-17 14:17:34,480 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 14:17:34,484 | ERROR | Validation Error: [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'value is not a valid email address: An email address must have an @-sign.', 'input': 'rishitamaheshwari07gmail', 'ctx': {'reason': 'An email address must have an @-sign.'}}]
+2025-06-17 14:18:26,022 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 14:19:31,947 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:19:32,815 | INFO | User login successful for email: admin@gmail.com, user_id: 1
+2025-06-17 14:20:10,680 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/cart
+2025-06-17 14:20:10,692 | ERROR | HTTPException: Requires roles: user
+2025-06-17 14:21:11,399 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/forgot-password
+2025-06-17 14:21:11,410 | INFO | Password reset requested for email: rishitamaheshwari07@gmail.com
+2025-06-17 14:21:15,009 | INFO | Password reset token generated for user ID 7, email sent to rishitamaheshwari07@gmail.com
+2025-06-17 14:22:35,657 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/reset-password
+2025-06-17 14:23:11,885 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:23:12,962 | INFO | User login successful for email: rishitamaheshwari07@gmail.com, user_id: 7
+2025-06-17 14:24:08,033 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/products/search
+2025-06-17 14:24:08,058 | INFO | Search returned 2 result(s) for keyword: 'body lotion'
+2025-06-17 14:24:39,053 | INFO | Access Log: IP=127.0.0.1, Method=DELETE, Path=/admin/products/2
+2025-06-17 14:24:39,094 | ERROR | Exception while deleting product ID=2
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1932, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 800, in do_executemany
+    cursor.executemany(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "product_id" of relation "cart" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, null, 1).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\app\products\routes.py", line 146, in delete_product
+    db.commit()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1932, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 800, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "product_id" of relation "cart" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, null, 1).
+
+[SQL: UPDATE cart SET product_id=%(product_id)s WHERE cart.id = %(cart_id)s]
+[parameters: [{'product_id': None, 'cart_id': 5}, {'product_id': None, 'cart_id': 16}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-06-17 14:24:39,343 | ERROR | HTTPException: Internal Server Error
+2025-06-17 14:25:37,709 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:25:38,369 | WARNING | Invalid login credentials for email: admin@gmail.com
+2025-06-17 14:25:38,371 | ERROR | HTTPException: Invalid email or password
+2025-06-17 14:25:45,530 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:25:46,205 | WARNING | Invalid login credentials for email: admin@gmail.com
+2025-06-17 14:25:46,208 | ERROR | HTTPException: Invalid email or password
+2025-06-17 14:25:53,530 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 14:25:54,476 | INFO | User login successful for email: admin@gmail.com, user_id: 1
+2025-06-17 14:26:30,449 | INFO | Access Log: IP=127.0.0.1, Method=DELETE, Path=/admin/products/2
+2025-06-17 14:26:30,502 | ERROR | Exception while deleting product ID=2
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1932, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 800, in do_executemany
+    cursor.executemany(statement, parameters)
+psycopg2.errors.NotNullViolation: null value in column "product_id" of relation "cart" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, null, 1).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\app\products\routes.py", line 146, in delete_product
+    db.commit()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1932, in _exec_single_context
+    self.dialect.do_executemany(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\psycopg2.py", line 800, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.NotNullViolation) null value in column "product_id" of relation "cart" violates not-null constraint
+DETAIL:  Failing row contains (5, 1, null, 1).
+
+[SQL: UPDATE cart SET product_id=%(product_id)s WHERE cart.id = %(cart_id)s]
+[parameters: [{'product_id': None, 'cart_id': 5}, {'product_id': None, 'cart_id': 16}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-06-17 14:26:30,590 | ERROR | HTTPException: Internal Server Error
+2025-06-17 14:26:47,562 | INFO | Access Log: IP=127.0.0.1, Method=DELETE, Path=/admin/products/3
+2025-06-17 14:26:47,601 | ERROR | Exception while deleting product ID=3
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.ForeignKeyViolation: update or delete on table "products" violates foreign key constraint "order_items_product_id_fkey" on table "order_items"
+DETAIL:  Key (id)=(3) is still referenced from table "order_items".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\app\products\routes.py", line 146, in delete_product
+    db.commit()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 679, in execute
+    util.preloaded.orm_persistence.delete_obj(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 193, in delete_obj
+    _emit_delete_statements(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1465, in _emit_delete_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) update or delete on table "products" violates foreign key constraint "order_items_product_id_fkey" on table "order_items"
+DETAIL:  Key (id)=(3) is still referenced from table "order_items".
+
+[SQL: DELETE FROM products WHERE products.id = %(id)s]
+[parameters: {'id': 3}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-06-17 14:26:47,722 | ERROR | HTTPException: Internal Server Error
+2025-06-17 15:44:03,289 | INFO | Access Log: IP=127.0.0.1, Method=DELETE, Path=/admin/products/3
+2025-06-17 15:44:03,359 | ERROR | HTTPException: Could not validate credentials
+2025-06-17 15:44:35,200 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 15:44:35,461 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 15:44:36,623 | INFO | User login successful for email: admin@gmail.com, user_id: 1
+2025-06-17 15:44:54,340 | INFO | Access Log: IP=127.0.0.1, Method=DELETE, Path=/admin/products/3
+2025-06-17 15:44:54,375 | WARNING | Delete failed: Product ID 3 is referenced in orders, cannot be deleted
+2025-06-17 15:52:23,369 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/signup
+2025-06-17 15:52:23,380 | ERROR | Validation Error: [{'type': 'value_error', 'loc': ('body', 'email'), 'msg': 'Value error, Invalid or unsupported email domain (TLD: .il)', 'input': 'rishitamaheshwari07@gma.il', 'ctx': {'error': ValueError('Invalid or unsupported email domain (TLD: .il)')}}]
+2025-06-17 18:33:12,871 | INFO | Access Log: IP=127.0.0.1, Method=POST, Path=/auth/login
+2025-06-17 18:33:13,033 | WARNING | (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\Users\gazal\Downloads\EcommProject\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-06-17 18:33:14,422 | INFO | User login successful for email: admin@gmail.com, user_id: 1
+2025-06-17 18:33:52,226 | INFO | Access Log: IP=127.0.0.1, Method=GET, Path=/admin/products
+2025-06-17 18:33:52,242 | INFO | Admin admin@gmail.com accessed product list: skip=0, limit=20, total=4

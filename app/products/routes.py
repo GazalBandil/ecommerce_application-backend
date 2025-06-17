@@ -1,9 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, Query , status
+from app.core.error_logger import create_error_response
 from app.core.logging import logger
 from sqlalchemy.orm import Session
 from app.auth.dependencies import require_role
 from app.auth.models import Roles
 from app.core.deps import get_db
+from app.orders.models import OrderItem
 from app.products.models import Product
 from app.products.schemas import *
 
@@ -142,6 +144,13 @@ async def delete_product(
         raise HTTPException(status_code=404, detail="Product not found")
 
    try:
+        product_in_orders = db.query(OrderItem).filter(OrderItem.product_id == id).first()
+        if product_in_orders:
+            logger.warning(f"Delete failed: Product ID {id} is referenced in orders, cannot be deleted")
+            return create_error_response(
+                f"Product '{product.name}' is part of existing orders and cannot be deleted",
+                 status_code=status.HTTP_400_BAD_REQUEST
+            )
         db.delete(product)
         db.commit()
         logger.info(f"Product deleted: ID={id}, Name='{product.name}', by AdminID={user.get('id')}")
